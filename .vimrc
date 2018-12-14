@@ -17,10 +17,12 @@ Plugin 'alvan/vim-closetag' " XML/HTML tag closing
 " End Vundle setup
 call vundle#end()
 
-" Tab key puts 4 spaces in
+" Tab key puts 2 spaces in
+" Existing tabs show as up to 4 spaces
 filetype plugin indent on
 set tabstop=4
-set shiftwidth=4
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 
 " Syntax highlighting
@@ -38,4 +40,7 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.xml'
 let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.xml'
 let g:closetag_filetypes = 'html,xhtml,phtml,xml'
 let g:closetag_xhtml_filetypes = 'xhtml,jsx,xml'
+
+" Let Vim know to syntax highlight Dockerfile.* as a Dockerfile
+autocmd BufNewFile,BufRead Dockerfile.* set syntax=dockerfile
 
